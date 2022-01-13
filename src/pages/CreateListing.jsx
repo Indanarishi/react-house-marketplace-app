@@ -152,9 +152,7 @@ function CreateListing() {
         }
 
         const imgUrls = await Promise.all(
-            [...images].map((image) => {
-                return storeImage(image)
-            })
+            [...images].map((image) => storeImage(image))
         ).catch(() => {
             setLoading(false)
             toast.error('Images not uploaded')
